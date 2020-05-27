@@ -13,12 +13,36 @@
     </head>
     <body>
         <div class="jumbotron" style="background-color: black; color: white;">
-            <h1>Couch_It</h1>
+            <h1 id="title">Couch_It</h1>
         </div>
+        <h2>Popular Movies</h2>
         <div class="container-fluid">
-            <h2>Popular Movies</h2>
             {% for movie in popular %}
-                <img class="img-responsive" src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}">
+                <a href="#" class="item"><img class="img-responsive" src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}"></a> 
+            {% endfor %}
+        </div>
+        <h2>Upcoming Movies</h2>
+        <div class="container-fluid">
+            {% for movie in upcoming %}
+                <a href="#" class="item"><img class="img-responsive" src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}"></a> 
+            {% endfor %}
+        </div>
+        <h2>Popular TV Shows</h2>
+        <div class="container-fluid">
+            {% for show in shows %}
+                <a href="#" class="item"><img class="img-responsive" src="https://image.tmdb.org/t/p/w342/{{show.poster_path}}"></a> 
+            {% endfor %}
+        </div>
+        <h2>Current Shows</h2>
+        <div class="container-fluid">
+            {% for show in current %}
+                <a href="#" class="item"><img class="img-responsive" src="https://image.tmdb.org/t/p/w342/{{show.poster_path}}"></a> 
+            {% endfor %}
+        </div>
+        <h2>Top Rated Shows</h2>
+        <div class="container-fluid">
+            {% for show in top %}
+                <a href="#" class="item"><img class="img-responsive" src="https://image.tmdb.org/t/p/w342/{{show.poster_path}}"></a> 
             {% endfor %}
         </div>
         {% block scripts %}

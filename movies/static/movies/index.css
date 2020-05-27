@@ -1,3 +1,48 @@
 body {
     background-color: black;
 }
+
+#title {
+    margin-top: -55px;
+    margin-left: -10px;
+}
+.container-fluid {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    
+
+}
+
+.item {
+    position: relative;
+    display: block;
+    flex: 1 1 0px;
+    transition: transform 500ms;
+}
+
+.item img {
+    display: block;
+    max-width: 100%;
+}
+
+.container-fluid .item:focus,
+.container-fluid .item:hover {
+    transform: scale(1.5);
+    z-index: 1;
+}
+
+body {
+    
+    height: 100%;
+}
+
+.item:focus ~.item,
+.item:hover ~ .item {
+    transform: translateX(25%);
+}
+
+
+
+
+  

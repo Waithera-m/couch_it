@@ -17,4 +17,13 @@ def index(request):
     upcoming_movies_tmdb = tmdb.Movies('upcoming')
     upcoming_movies = upcoming_movies_tmdb.info()['results']
 
-    return render(request, 'movies.html', {"popular":popular_movies, 'upcoming':upcoming_movies})
+    popular_shows_tmdb = tmdb.TV('popular')
+    popular_shows = popular_shows_tmdb.info()['results']
+
+    current_shows_tmdb = tmdb.TV('airing_today')
+    current_shows = current_shows_tmdb.info()['results']
+
+    top_shows_tmdb = tmdb.TV('top_rated')
+    top_shows = top_shows_tmdb.info()['results']
+
+    return render(request, 'movies.html', {"popular":popular_movies, 'upcoming':upcoming_movies, 'shows':popular_shows, "current":current_shows, 'top':top_shows})
