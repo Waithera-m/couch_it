@@ -35,3 +35,11 @@ def single_movie(request, movie_id):
     movie = tmdb.Movies(movie_id)
     movie = movie.info()
     return render(request, 'single_movie.html', {'movie':movie})
+
+def single_show(request, tv_id):
+    """
+    view function renders template that displays the details of a single TV show
+    """
+    show = tmdb.TV(tv_id)
+    show = show.info()
+    return render(request, 'single_show.html', {"show":show})

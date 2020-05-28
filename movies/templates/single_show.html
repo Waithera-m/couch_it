@@ -17,12 +17,12 @@
         <div class="container-fluid" id="movie-detail">
             <div class="row">
                 <div class="col-md-6">
-                    <h1>{{movie.title}}</h1>
-                    <p>Score: {{movie.vote_average}}</br>Release Date: {{movie.release_date}}</p>
-                    <p>{{movie.overview}}</p>
+                    <h1>{{show.name}}</h1>
+                    <p>Score: {{show.vote_average}}</br>Release Date: {{show.first_air_date}}</br>Seasons: {{show.number_of_seasons}}</p>
+                    <p>{{show.overview}}</p>
                 </div>
                 <div class="col-md-6">
-                    <img class="img-responsive" src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}">
+                    <img class="img-responsive" src="https://image.tmdb.org/t/p/w342/{{show.poster_path}}">
                 </div>
             </div>
             
