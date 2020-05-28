@@ -18,13 +18,13 @@
         <h2>Popular Movies</h2>
         <div class="container-fluid">
             {% for movie in popular %}
-                <a href="#" class="item"><img class="img-responsive" src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}"></a> 
+                <a href="{% url 'movies:single_movie' movie.id %}" class="item"><img class="img-responsive" src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}"></a> 
             {% endfor %}
         </div>
         <h2>Upcoming Movies</h2>
         <div class="container-fluid">
             {% for movie in upcoming %}
-                <a href="#" class="item"><img class="img-responsive" src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}"></a> 
+                <a href="{% url 'movies:single_movie' movie.id %}" class="item"><img class="img-responsive" src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}"></a> 
             {% endfor %}
         </div>
         <h2>Popular TV Shows</h2>

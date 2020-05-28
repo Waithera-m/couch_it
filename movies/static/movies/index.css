@@ -42,7 +42,11 @@ body {
     transform: translateX(25%);
 }
 
-
+#movie-detail {
+    background-image: linear-gradient(to right, black,white);
+    background-position: 0 100%;
+    color: white;
+}
 
 
   

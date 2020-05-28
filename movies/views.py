@@ -27,3 +27,11 @@ def index(request):
     top_shows = top_shows_tmdb.info()['results']
 
     return render(request, 'movies.html', {"popular":popular_movies, 'upcoming':upcoming_movies, 'shows':popular_shows, "current":current_shows, 'top':top_shows})
+
+def single_movie(request, movie_id):
+    """
+    view function renders template that displays the details of a single movie
+    """
+    movie = tmdb.Movies(movie_id)
+    movie = movie.info()
+    return render(request, 'single_movie.html', {'movie':movie})
