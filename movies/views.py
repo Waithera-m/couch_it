@@ -51,4 +51,11 @@ def single_show(request, tv_id):
     """
     show = tmdb.TV(tv_id)
     show = show.info()
-    return render(request, 'single_show.html', {"show":show})
+    youtube = build('youtube', 'v3', developerKey=API_KEY)
+    show_name = show['original_name']
+    req = youtube.search().list(q=show_name, part="snippet", type='video', maxResults=1)
+    res = req.execute()
+    for result in res.get('items'):
+        if result['id']['kind'] == 'youtube#video':
+            video_id = result['id']['videoId']
+    return render(request, 'single_show.html', {"show":show, 'videoId':video_id})
