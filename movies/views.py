@@ -1,11 +1,13 @@
 from django.shortcuts import render
 import tmdbsimple as tmdb
-import os
 from decouple import config
+from googleapiclient.discovery import build
+
 
 # Create your views here.
 tmdb.API_KEY=config('API_KEY')
-print(tmdb.API_KEY)
+API_KEY=config('DEVELOPER_KEY')
+
 
 def index(request):
     """
@@ -34,7 +36,14 @@ def single_movie(request, movie_id):
     """
     movie = tmdb.Movies(movie_id)
     movie = movie.info()
-    return render(request, 'single_movie.html', {'movie':movie})
+    youtube = build('youtube', 'v3', developerKey=API_KEY)
+    movie_name = movie['original_title']
+    req = youtube.search().list(q=movie_name, part='snippet', type='video', maxResults=1)
+    res = req.execute()
+    for result in res.get('items'):
+        if result['id']['kind'] == 'youtube#video':
+            video_id = result['id']['videoId']
+    return render(request, 'single_movie.html', {'movie':movie, 'videoId':video_id})
 
 def single_show(request, tv_id):
     """

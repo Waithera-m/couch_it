@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'movies.apps.MoviesConfig',
     'tmdbsimple',
     'bootstrap4',
+    'googleapiclient',
 ]
 
 MIDDLEWARE = [
