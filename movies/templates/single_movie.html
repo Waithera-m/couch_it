@@ -13,7 +13,9 @@
         {% endblock %}
     </head>
     <body>
+        
         <div class="jumbotron" style="background-color: black;">
+            <h1 id="title"><a style="color: red;" href="{% url 'movies:index' %}">Couch_It</a></h1>
             <div class="embed-responsive embed-responsive-21by9">
                 <iframe class="embed-responsive-item" id="video" src="//www.youtube.com/embed/{{videoId}}?rel=0" frameborder="0"></iframe>
             </div>

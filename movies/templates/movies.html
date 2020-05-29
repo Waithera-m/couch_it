@@ -10,10 +10,12 @@
             {% bootstrap_css %}
             <link rel="stylesheet" type="text/css" href="{% static 'movies/index.css'%}">
         {% endblock %}
+        <script src="https://kit.fontawesome.com/79cafd0f3e.js" crossorigin="anonymous"></script>
     </head>
     <body>
+       
         <div class="jumbotron" style="background-color: black; color: white;">
-            <h1 id="title">Couch_It</h1>
+            <h1 id="title"><a style="color: red;" href="{% url 'movies:index' %}">Couch_It</a></h1>
         </div>
         <h2>Popular Movies</h2>
         <div class="container-fluid">

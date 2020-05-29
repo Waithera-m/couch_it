@@ -14,6 +14,7 @@
     </head>
     <body>
         <div class="jumbotron" style="background-color: black;">
+            <h1 id="title"><a style="color: red;" href="{% url 'movies:index' %}">Couch_It</a></h1>
             <div class="embed-responsive embed-responsive-21by9">
                 <iframe  class="embed-responsive-item" id="video" src="//www.youtube.com/embed/{{videoId}}?rel=0" frameborder="0"></iframe>
             </div>
@@ -23,7 +24,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h1>{{show.name}}</h1>
-                    <p>Score: {{show.vote_average}}</br>Release Date: {{show.first_air_date}}</br>Seasons: {{show.number_of_seasons}}</p>
+                    <p style="display: inline-block;">Score: {{show.vote_average}}<br>First Aired: {{show.first_air_date}}</br>Seasons: {{show.number_of_seasons}}</br>Runtime: {{show.episode_run_time}} minutes</p>
                     <p>{{show.overview}}</p>
                 </div>
                 <div class="col-md-6">
