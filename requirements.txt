@@ -27,7 +27,7 @@ pylint-django==2.0.15
 pylint-plugin-utils==0.6
 pytz==2020.1
 requests==2.23.0
-rsa==4.0
+rsa==4.1
 six==1.15.0
 soupsieve==2.0.1
 sqlparse==0.3.1
